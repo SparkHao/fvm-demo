@@ -101,6 +101,7 @@ where
         })?;
 
         // Extract the exit code and build the result of the message application.
+        log::info!("sender_id: {:?}, to: {:?}, method_num: {:?}, gas_used: {:?}, gas_cost: {:?}", sender_id, msg.to, msg.method_num, gas_used, gas_cost);
         let receipt = match res {
             Ok(InvocationResult::Return(return_value)) => {
                 // Convert back into a top-level return "value". We throw away the codec here,
