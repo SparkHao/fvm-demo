@@ -100,6 +100,7 @@ where
             )
         })?;
 
+        log::info!("sender_id: {:?}, to: {:?}, method_num: {:?}, gas_used: {:?}, gas_cost: {:?}", sender_id, msg.to, msg.method_num, gas_used, gas_cost);
         // Extract the exit code and build the result of the message application.
         let receipt = match res {
             Ok(InvocationResult::Return(return_value)) => {
